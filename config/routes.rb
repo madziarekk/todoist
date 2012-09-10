@@ -1,14 +1,10 @@
 Todoist::Application.routes.draw do
   resources :users
-
   #get "users/new"
-
-
   root to: 'static_pages#home'
 
-  match '/signup',  to: 'users#new'
- 
- match '/home',  to: 'users%index'
+  match '/signup' => 'users#new'
+  match '/home' => 'users#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
