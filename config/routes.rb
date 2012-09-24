@@ -1,10 +1,18 @@
 Todoist::Application.routes.draw do
   resources :users
   #get "users/new"
-  root to: 'static_pages#home'
+ # root to: 'static_pages#home'
 
-  match '/signup' => 'users#new'
-  match '/home' => 'users#index'
+
+ resources :sessions, only: [:new, :create, :destroy]
+
+ # match '/home' => 'users#index'
+  #match '/signin' => 'users#signin'
+
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
