@@ -14,13 +14,15 @@ class MainController < Controller
   helper :xhtml, :user
   engine :Etanni
 
+  @title = 'Todoist'
+
   def login_first
    return if logged_in?
    redirect MainController.r(:login)
   end
 
   def login
-  @title = "Login"
+  #@title = "Login"
   redirect_referer if logged_in?
   return unless request.post?
   user_login(request.subset(:login, :password))
@@ -28,7 +30,7 @@ class MainController < Controller
 end
 
 def register
-  @title = "Register for an account"
+  #@title = "Register for an account"
   
   if request.post?
     @user = ::User.new
@@ -51,21 +53,16 @@ def register
 
   # the index action is called automatically when no other action is specified
   def index
-    @title = 'Todoist'
-  end
-
-  def login
-    @title = 'Todoist'
-    #@title = 'Login'
+    #@title = 'Todoist'
   end
 
   def signup
-     @title = 'Todoist'
+     #@title = 'Todoist'
     #@title = 'Sign up'
   end
 
   def mydashboard
-     @title = 'Todoist'
+    # @title = 'Todoist'
     #@title = "My dashboard"
   end
 

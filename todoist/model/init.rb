@@ -3,4 +3,5 @@
 # fit.
 
 # Here go your requires for models:
-# require __DIR__('user')
+require __DIR__('user')
+require __DIR__('todoist')
