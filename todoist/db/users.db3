@@ -1,0 +1,7 @@
+create table users(
+  id integer primary key,
+  login varchar default null,
+  email varchar default null,
+  crypted_password varchar default null,
+  salt text default null
+  );
