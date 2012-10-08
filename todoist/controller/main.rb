@@ -9,6 +9,17 @@
 #
 # this will force the controller to be mounted on: /otherurl.
 class MainController < Controller
+
+  layout :default
+  helper :xhtml, :user
+  engine :Etanni
+
+def login_first
+   return if logged_in?
+   redirect MainController.r(:login)
+ end
+
+
   # the index action is called automatically when no other action is specified
   def index
     @title = 'Todoist'
