@@ -14,6 +14,21 @@ class MainController < Controller
     @title = 'Todoist'
   end
 
+  def login
+    @title = 'Todoist'
+    #@title = 'Login'
+  end
+
+  def signup
+     @title = 'Todoist'
+    #@title = 'Sign up'
+  end
+
+  def mydashboard
+     @title = 'Todoist'
+    #@title = "My dashboard"
+  end
+
   # the string returned at the end of the function is used as the html body
   # if there is no template for the action. if there is a template, the string
   # is silently ignored
